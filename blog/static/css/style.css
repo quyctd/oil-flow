@@ -1,0 +1,135 @@
+#mydiv {
+    position:fixed;
+    top: 50%;
+    left: 50%;
+    width:40em;
+    height:2.5em;
+    margin-top: -4em; /*set to a negative number 1/2 of your height*/
+    margin-left: -20em; /*set to a negative number 1/2 of your width*/
+    border: 0px solid #ccc;
+}
+
+.tags {
+  list-style: none;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+}
+
+.tags li {
+  float: left;
+}
+
+.tag {
+  background: #eee;
+  border-radius: 3px 0 0 3px;
+  color: #000;
+  display: inline-block;
+  height: 26px;
+  line-height: 26px;
+  padding: 0 20px 0 23px;
+  position: relative;
+  margin: 0 10px 10px 0;
+  text-decoration: none;
+  -webkit-transition: color 0.2s;
+}
+
+.tag::before {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: inset 0 1px rgba(0, 0, 0, 0.25);
+  content: '';
+  height: 6px;
+  left: 10px;
+  position: absolute;
+  width: 6px;
+  top: 10px;
+}
+
+.tag::after {
+  background: #fff;
+  border-bottom: 13px solid transparent;
+  border-left: 10px solid #eee;
+  border-top: 13px solid transparent;
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.tag:hover {
+  background-color: #009cc6;
+  color: white;
+}
+
+.tag:hover::after {
+   border-left-color: #009cc6;
+}
+#footer {
+    margin-top: 20px;
+    position:fixed;
+    bottom:0;
+    width: 100%;
+}
+
+.heading{
+  background-image: url("http://techkids.vn/images/Background.jpg");
+}
+
+.ulstats {
+   color: #2f3239;
+   font-size: 15px;
+   font-weight: 600;
+   background-color: #eaeaeb;
+   margin-bottom: 10px;
+   padding: 10px !important;
+}
+
+.ulsocials {
+   color: #2f3239;
+   font-size: 14px;
+   font-weight: 600;
+   /* height: 60px; */
+   background-color: #eaeaeb;
+   margin-bottom: 10px;
+   padding: 15px !important;
+}
+
+.facebook-fans{
+  background-color: #5d82d1;
+}
+
+.youtube-subscribers{
+  background-color: #c4302b;
+}
+
+.tabs {
+    overflow: hidden;
+    position: relative;
+    border-bottom: 2px solid #009cc6;
+
+}
+ol, ul, li {
+    list-style: none;
+}
+
+.nav-tabs .nav-link.active {
+    color: #fff;
+    background-color: #009cc6;
+    border-color: #009cc6 #009cc6 #009cc6;
+}
+
+.ques-title{
+  text-decoration: none;
+  color: #000;
+}
+.ques-title:hover {
+  text-decoration: none;
+  color: #009cc6;
+}
+
+.nav-link {
+  display: block;
+  padding: .61rem 1.2rem;
+  font-size: 17px;
+}
