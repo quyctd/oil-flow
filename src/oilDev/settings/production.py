@@ -2,7 +2,7 @@ from .base import *
 
 DEBUG = False
 
-ALLOWED_HOSTS = ["oilflow.herokuapp.com"]
+ALLOWED_HOSTS = ["oilflow.herokuapp.com",'127.0.0.1']
 
 CORS_REPLACE_HTTPS_REFERER = True
 HOST_SCHEME = "https://"
