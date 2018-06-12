@@ -1,0 +1,28 @@
+<div class="widget questions-widget">
+    <h3 class="widget_title">New Questions</h3>
+    <ul class="related-posts">
+    <li class="related-item">
+        {% for question in related_question %}
+        <div class="questions-div">
+        <h3><a href="/post/{{post.pk}}"><i class="far fa-question-circle"></i> {{post.title}}</a></h3>
+        </div>
+        {% endfor %}
+    </li>
+    </ul>
+</div>
+
+<div class="widget questions_categories-widget">
+    <h3 class="widget_title">Questions Categories</h3>
+    <ul>
+        <li><a href="">CSS <span>(2 Questions)</span></a></li>
+    </ul>
+    </div>
+    <div class="clearfix"></div>
+    <div class="widget widget_tag_cloud">
+    <h3 class="widget_title">Tag Cloud</h3>
+    <div class="tagcloud">
+        {% for tag in tags %}
+            <a href="">{{tag}}</a>
+        {% endfor %}
+    </div>
+    </div>

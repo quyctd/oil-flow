@@ -1,0 +1,46 @@
+<div class="col-md-9 float-left">
+        {% if request.GET.q %}
+          {% if question_list.count == 0 %}
+            <img style="box-shadow: 0 2px 15px -1px rgba(0,0,0,.13)" class=" mt-4" src="../static/empty.png" alt="no-result">
+          {% else %}
+            <h5 class="bg-white rounded p-2 text-secondary mt-4"><i class="fab fa-searchengin fa-lg	"></i> We found {{question_list|length}}
+              {% if question_list.count > 1 %} results for you {% else %} result for you {% endif %}
+            </h5>
+          {% endif %}
+          {% else %}
+          <ul class="nav nav-tabs tabs mt-4">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Recent Questions</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Popular Questions</a>
+            </li>
+          </ul>
+          <br>
+        {% endif %}
+        {% for post in question_list %}
+        <div class="bg-white rounded px-3 mb-3" style="box-shadow: 0 2px 15px -1px rgba(0,0,0,.13);">
+          <br>
+          <h3><a class="ques-title" href="/post/{{post.pk}}">{{post.title}}</a></h3>
+          <div class="mt-3">
+            <span class="text-muted mr-2 " style="font-size:16px; font-weight:200"><i class="fas fa-user"></i> {{post.author}}</span>
+            <span class="text-muted mr-2" style="font-size:16px; font-weight:200"><i class="fas fa-calendar-alt"></i> {{post.create_date|date:"d/m/Y"}}</span>
+            <span class="text-muted" style="font-size:16px; font-weight:200"><i class="fas fa-eye" ></i> {{post.hits}} views</span>
+          </div>
+
+          <br>
+          <h1 class="text-muted mt-1" style="font-size:18px; font-weight:200">{{ post.answer|safe|truncatewords_html:32 }}</h1>
+          <hr>
+          <ul class="tags">
+            {% for tag in post.tags.all %}
+              <li><small href="#" class="tag"> {{tag}}</small></li>
+            {% endfor %}
+              <li><small>
+                <a href="{{post.refer_link}}"><i class="fas fa-link"></i> Permalink</a>
+                </small></li>
+          </ul>
+
+          <br>
+        </div>
+        {% endfor %}
+      </div>

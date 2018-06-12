@@ -7,29 +7,38 @@
     {% include "blog/partial/meta-data.html" %}
 
   </head>
-  <body style="width: 100%; height: 100%; background-color: #2A3545">
+  <body>
 
-
+    {% include "blog/partial/navbar_top.html" %}
+    
     {% include "blog/partial/header.html" %}
-    <div class="container-fluid">
-        <div class="bg-light rounded px-3">
-          <hr>
-          <h4>{{post.title}}</h4>
-          <small class="text-muted">Create {{post.create_date|date:"Y-m-d"}} by {{post.author}}</small>
-          <p>{{post.extend_question|safe}}</p>
-          <hr>
-          <p>{{post.answer|safe }}<small>Refer Link : <a href="{{post.refer_link}}">{{post.refer_link}}</a></small></p>
+    {% include 'blog/detail_partial/post_header.html'%}
 
-          <ul class="tags">
-            {% for tag in post.tags.all %}
-              <li><a href="#" class="tag"> {{tag}}</a></li>
-            {% endfor %}
-          </ul>
-          <hr>
+    <!-- Main content -->
+    <div class="container main-content page-right-sidebar">
+      <div class="row">
+        <div class="with-sidebar-container">
+          
+          <!-- Content question -->
+          <div class="col-md-8 float-left">
+            {% include 'blog/detail_partial/question.html' %}
+            
+            {% include 'blog/detail_partial/comment.html' %}
+            
+          </div>
+
+          <!-- Stats -->
+          <aside class="col-md-4 sidebar float-left">
+            {% include 'blog/detail_partial/stats.html' %}
+          </aside>
+
         </div>
       </div>
-
     </div>
+
+    
+    <!-- Footer -->
+    {% include "blog/partial/footer.html" %}
   </body>
 
 </html>

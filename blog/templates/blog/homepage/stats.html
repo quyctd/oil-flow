@@ -1,0 +1,25 @@
+<div class="col-md-3">
+        <div class="bg-white rounded p-2 mt-4" style="box-shadow: 0 2px 15px -1px rgba(0,0,0,.13);">
+          <h4 style="border-bottom: 2px solid #dedede;margin: -20px 0 20px;padding: 20px 0 10px; color:#be161e;">Stats</h4>
+
+          <p class="ulstats"><i class="fas fa-question-circle mr-2"></i> Câu hỏi ( <span>{{post_list|length}}</span> )</p>
+          <p class="ulstats"><i class="fas fa-tags mr-2"></i>Tags ( <span>{{tags|length}}</span> )</p>
+          <p class="ulstats"><i class="fas fa-th-list mr-2"></i> Danh mục ( <span>6</span> )</p>
+        </div>
+        <br>
+        <div class="bg-white rounded p-2" style="box-shadow: 0 2px 15px -1px rgba(0,0,0,.13);">
+          <h4 style="border-bottom: 2px solid #dedede;margin: -20px 0 20px;padding: 20px 0 10px;color:#be161e;">Find Us</h4>
+
+          <ul class="widget_social" style="padding: 0">
+            <li class="facebook-fans ulsocials text-white"><label style="margin-bottom:0">123 <br>People like it</label> <i style="float:right" class="fab fa-facebook fa-3x" ></i></li>
+            <li class="youtube-subscribers ulsocials text-white"><label style="margin-bottom:0">456 <br> Subscribers</label> <i style="float:right" class="fas fa-play fa-3x "></i></li>
+          </ul>
+        </div>
+        <br>
+        <div class="bg-white rounded p-2" style="box-shadow: 0 2px 15px -1px rgba(0,0,0,.13);">
+          <h4 style="border-bottom: 2px solid #dedede;margin: -20px 0 20px;padding: 20px 0 10px;color:#be161e;">Tags</h4>
+            {% for tag in tags %}
+              <label class="text-white bg-dark">&nbsp {{tag.name}} &nbsp</label>
+            {% endfor %}
+        </div>
+      </div>
