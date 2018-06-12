@@ -13,3 +13,6 @@ psycopg2
 dj-database-url
 gunicorn
 django-heroku
+djangorestframework
+markdown
+django-filter
