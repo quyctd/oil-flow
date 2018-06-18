@@ -131,4 +131,4 @@ STATIC_URL = '/static/'
 STATIC_ROOT =  '/blog/static'#os.path.join(BASE_DIR, "blog/static")
 LOGIN_REDIRECT_URL = '/'
 
-# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
