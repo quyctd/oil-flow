@@ -42,16 +42,16 @@ INSTALLED_APPS = [
     'blog',
 ]
 
-
+#mongodb://admin:techkids69@ds263740.mlab.com:63740/oil-flow
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
-        'NAME': 'oildb',
-        'HOST': 'ds159400.mlab.com',
-        'PORT': 59400,
+        'NAME': 'oil-flow',
+        'HOST': 'ds263740.mlab.com',
+        'PORT': 63740,
         'USER': 'admin',
-        'PASSWORD': '123.Abc@',
-        'AUTH_SOURCE': 'oildb',
+        'PASSWORD': 'techkids69',
+        'AUTH_SOURCE': 'oil-flow',
     }
 }
 
