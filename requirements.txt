@@ -16,3 +16,4 @@ django-heroku
 djangorestframework
 markdown
 django-filter
+djongo
