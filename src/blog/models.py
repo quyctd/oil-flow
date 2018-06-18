@@ -2,13 +2,14 @@ from django.db import models
 from taggit.managers import TaggableManager
 from ckeditor.fields import RichTextField
 from django.utils import timezone
+from datetime import datetime
 # Create your models here.
 
 class Question(models.Model):
     title = models.CharField(max_length = 255)
     author = models.ForeignKey("auth.User", on_delete= models.CASCADE)
     main_question = RichTextField()
-    create_date = models.DateField(default = timezone.now)
+    create_date = models.DateField(default = datetime.now)
     refer_link = models.URLField()
     tags = TaggableManager()
     hits = models.IntegerField(default = 0)
@@ -24,5 +25,5 @@ class Category(models.Model):
         return self.name
 
 class Answer(models.Model):
-    question = models.ForeignKey(Question, on_delete = models.CASCADE)
+    question = models.ForeignKey(Question, on_delete = models.CASCADE, related_name='ans')
     answer = RichTextField()

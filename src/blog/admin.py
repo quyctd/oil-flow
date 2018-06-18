@@ -4,11 +4,11 @@ from blog.models import Question, Category, Answer
 
 class CategoryInline(admin.TabularInline):
     model = Category.post_list.through
-    extra = 0
+    # extra = 0
 
 class AnswerInline(admin.StackedInline):
     model = Answer
-    extra = 1
+    # extra = 1
 
 class QuestionAdmin(admin.ModelAdmin):
     inlines = [ AnswerInline,CategoryInline,]

@@ -1,0 +1,14 @@
+{% include "blog/partial/header.html" %}
+<header class="text-center mb-5">
+    <div class='header-container'>
+        <h3 class="font-weight-bold">{{question.title}}</h3>
+        <p>
+        <small>Viết vào {{ question.create_date|date:"d" }} tháng {{ question.create_date|date:"m, Y" }}</small>
+        </p>
+        <p class="my-color">
+            {% for tag in question.tags.all %}
+                #{{tag|upper}}
+            {% endfor %}
+        </p>
+    </div>
+</header>

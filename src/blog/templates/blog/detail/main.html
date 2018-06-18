@@ -1,0 +1,37 @@
+<div class="main-content my-container mb-5">
+    <p>
+        {{ question.main_question|safe }}
+    </p>
+    <br>
+    <hr>
+    <h3 class="font-weight-bold">{{ question.ans.all|length }} câu trả lời</h3>
+    {% for ans in question.ans.all %}
+        <br>
+        <p class="my-color font-weight-bold">#{{forloop.counter}}</p>
+        <p>{{ans.answer|safe}}</p>
+    {% endfor %}
+    
+    <hr>
+    <!-- refer -->
+    <div class="mb-5">
+        <h3 class="font-weight-bold mb-4">Tham khảo</h3>
+        <a class="ml-5" href="">1 .{{question.refer_link}}</a>
+    </div>
+    <!-- relate -->
+    <div class="mb-5">
+        <h3 class="font-weight-bold mb-4">Câu hỏi liên quan</h3>
+        {% for ques in related_question %}
+            <div class="py-4">
+                <a class="" href="/post/{{ques.pk}}">
+                    <h5 class="ques-title mb-3 text-dark" style="font-weight: 700;">{{ ques.title }}</h5>
+                </a>
+                <p>{{ ques.main_question|safe|truncatewords_html:20 }}</p>
+                <small class="mr-2">{{ ques.create_date|date:"d" }} tháng {{ ques.create_date|date:"m, Y" }}</small>
+                <small class="mr-2">{{ ques.create_date|timesince }}</small>
+                {% for tag in ques.tags.all %}
+                <small class="mr-2 my-color font-weight-bold">#{{ tag|upper }}</small>
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+</div>

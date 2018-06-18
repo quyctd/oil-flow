@@ -27,7 +27,7 @@ def question_detail(request, pk):
         'tags' : tag_cloud
     }
 
-    return render(request, "blog/post_detail.html", context=context)
+    return render(request, "blog/post-detail.html", context=context)
 
 def index(request):
     query = request.GET.get("q")
@@ -35,18 +35,22 @@ def index(request):
     question_list= []
     if query:
         question_list = Question.objects.all()
+        # get_query()
         question_list = question_list.filter(
-            Q(title__icontains = query)|
-            Q(answer__icontains = query)|
-            Q(extend_question__icontains = query)|
-            Q(tags__name__icontains = query)
+            Q(title__icontains = query)#|
+            # Q(ans__icontains = query)#|
+            # Q(main_question__icontains=query)|
+            # Q(tags__name = query)
         ).distinct()
+        context = {
+            'question_list': question_list,
+        }
+        return render(request, 'blog/search_result.html', context = context)
     else:
         question_list = Question.objects.all()[:3]
     context = {
         "question_list": question_list,
         "query": query,
-        "tags": tags,
     }
 
-    return render(request, 'blog/homepage_mix.html', context = context)
+    return render(request, 'blog/homepage.html', context = context)

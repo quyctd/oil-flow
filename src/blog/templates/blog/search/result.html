@@ -1,0 +1,16 @@
+<div class="main-content my-container mb-5">
+    <h3 class="font-weight-bold">Kết quả tìm kiếm</h3>
+    {% for ques in question_list %}
+    <div class="py-4">
+        <a class="" href="/post/{{ques.pk}}">
+            <h5 class="ques-title mb-3 text-dark" style="font-weight: 700;">{{ ques.title }}</h5>
+        </a>
+        <p>{{ ques.main_question|safe|truncatewords_html:25 }}</p>
+        <small class="mr-2">{{ ques.create_date|date:"d" }} tháng {{ ques.create_date|date:"m, Y" }}</small>
+        <small class="mr-2">{{ ques.create_date|timesince }}</small>
+        {% for tag in ques.tags.all %}
+        <small class="mr-2 my-color font-weight-bold">#{{ tag|upper }}</small>
+        {% endfor %}
+    </div>
+    {% endfor %}
+</div>
