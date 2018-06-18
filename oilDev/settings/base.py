@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'blog',
 ]
 
+
 #mongodb://admin:techkids69@ds263740.mlab.com:63740/oil-flow
 DATABASES = {
     'default': {
