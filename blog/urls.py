@@ -12,7 +12,8 @@ router.register("question", api_views.QuestionViewSet, base_name="question_views
 urlpatterns =[
     url(r'^$', views.index, name = "homepage"),
     url(r'^post$', views.QuestionListView.as_view(), name = "postlist"),
-    url(r'^post/(?P<pk>\d+)$', views.question_detail, name = "postDetail"),
+    # url(r'^post/(?P<pk>\d+)$', views.question_detail, name = "postDetail"),
+    url(r'^post/(?P<slug>[\w-]+)$', views.question_detail, name = "postDetail"),
     url(r'^api/', include(router.urls)),
 
 ]

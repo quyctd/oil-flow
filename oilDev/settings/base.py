@@ -43,18 +43,7 @@ INSTALLED_APPS = [
 ]
 
 
-#mongodb://admin:techkids69@ds263740.mlab.com:63740/oil-flow
-DATABASES = {
-    'default': {
-        'ENGINE': 'djongo',
-        'NAME': 'oil-flow',
-        'HOST': 'ds263740.mlab.com',
-        'PORT': 63740,
-        'USER': 'admin',
-        'PASSWORD': 'techkids69',
-        'AUTH_SOURCE': 'oil-flow',
-    }
-}
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

@@ -4,6 +4,19 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["54.169.183.183", 'oilflow.herokuapp.com']
 
+#mongodb://admin:techkids69@ds263740.mlab.com:63740/oil-flow
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'djongo',
+        'NAME': 'oil-flow',
+        'HOST': 'ds263740.mlab.com',
+        'PORT': 63740,
+        'USER': 'admin',
+        'PASSWORD': 'techkids69',
+        'AUTH_SOURCE': 'oil-flow',
+    }
+}
 
 # CORS_REPLACE_HTTPS_REFERER = True
 # HOST_SCHEME = "https://"

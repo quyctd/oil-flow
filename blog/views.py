@@ -13,8 +13,8 @@ class QuestionListView(ListView):
         return Question.objects.all()
 
 
-def question_detail(request, pk):
-    question = get_object_or_404(Question, pk = pk)
+def question_detail(request, slug):
+    question = get_object_or_404(Question, slug = slug)
     question.hits = question.hits + 1
     question.save()
     
@@ -37,10 +37,7 @@ def index(request):
         question_list = Question.objects.all()
         # get_query()
         question_list = question_list.filter(
-            Q(title__icontains = query)#|
-            # Q(ans__icontains = query)#|
-            # Q(main_question__icontains=query)|
-            # Q(tags__name = query)
+            Q(title__icontains = query)
         ).distinct()
         context = {
             'question_list': question_list,

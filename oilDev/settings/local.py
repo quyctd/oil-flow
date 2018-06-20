@@ -4,13 +4,16 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# mongodb://admin:123.abc@@ds159400.mlab.com:59400/oildb
 
-CORS_REPLACE_HTTPS_REFERER = False
-HOST_SCHEME = "http://"
-SECURE_PROXY_SSL_HEADER = None
-SECURE_SSL_REDIRECT = False
-SESSION_COOKIE_SECURE = False
-CSRF_COOKIE_SECURE = False
-SECURE_HSTS_SECONDS = None
-SECURE_HSTS_INCLUDE_SUBDOMAINS = False
-SECURE_FRAME_DENY = False
+DATABASES = {
+    'default': {
+        'ENGINE': 'djongo',
+        'NAME': 'oildb',
+        'HOST': 'ds159400.mlab.com',
+        'PORT': 59400,
+        'USER': 'admin',
+        'PASSWORD': '123.Abc@',
+        'AUTH_SOURCE': 'oildb',
+    }
+}
